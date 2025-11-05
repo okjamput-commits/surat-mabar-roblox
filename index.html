@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayo Mabar Roblox!!!</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #fffaf0, #e3f2fd);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  /* amplop */
+  #envelope {
+    width: 200px;
+    height: 140px;
+    background: url('https://cdn-icons-png.flaticon.com/512/561/561127.png') no-repeat center/contain;
+    cursor: pointer;
+    transition: transform 1s ease;
+  }
+
+  /* efek buka */
+  #envelope.open {
+    transform: rotateX(180deg);
+  }
+
+  /* teks muncul */
+  #text {
+    display: none;
+    font-size: 32px;
+    color: #ff3333;
+    font-weight: bold;
+    margin-top: 30px;
+    text-shadow: 0 0 10px rgba(255,0,0,0.4);
+    animation: fadeIn 1.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<h2>Klik Suratnya 👇</h2>
+<div id="envelope"></div>
+<div id="text">AYO MABAR ROBLOX!!! 🎮🔥</div>
+
+<!-- Backsound -->
+<audio id="backsound" src="https://www.myinstants.com/media/sounds/roblox-death-sound.mp3"></audio>
+
+<script>
+const envelope = document.getElementById('envelope');
+const text = document.getElementById('text');
+const backsound = document.getElementById('backsound');
+
+envelope.addEventListener('click', () => {
+  envelope.classList.add('open');
+  backsound.play(); // mainkan backsound
+  setTimeout(() => {
+    text.style.display = 'block';
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
